@@ -57,7 +57,12 @@ sysinfo.txt
 
 # Crashlytics generated file
 <<<<<<< HEAD
+<<<<<<< HEAD
 crashlytics-build.properties
+=======
+crashlytics-build.properties
+
+>>>>>>> cf5a54ccf1200781fee1e49a2c5c904afb7ad22b
 =======
 crashlytics-build.properties
 
