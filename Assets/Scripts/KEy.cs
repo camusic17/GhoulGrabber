@@ -9,7 +9,12 @@ public class KEy : MonoBehaviour
     {
         if(collider.gameObject.name == "Player")
         {
-            GameVariables.keyCount += 2;
+            GameVariables.keyCount += 1;
+
+            //DEAN'S CODE-
+            GameVariables.keyPickedUp = true;
+            //-----
+
             Destroy(gameObject);
         }
     }
