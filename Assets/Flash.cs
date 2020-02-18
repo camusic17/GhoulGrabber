@@ -6,51 +6,50 @@ using UnityEngine.UI;
 
 public class Flash : MonoBehaviour
 {
+    //public so we can edit in the editor
     public float flashTimelength = .2f;
-    //public bool doCameraFlash = false;
 
-    ///////////////////////////////////////////////////
     private Image flashImage;
     private float startTime;
     private bool flashing = false;
-    // Start is called before the first frame update
+
     void Start()
     {
+        //get flash image
         flashImage = GetComponent<Image>();
+
+        //change alpha value of image to 0 before the first frame
         Color col = flashImage.color;
         col.a = 0.0f;
         flashImage.color = col;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //if primary mouse button is clicked and we are not flashing
         if (Input.GetMouseButtonDown(0) && !flashing)
         {
-            CameraFlash();
+            //flash the camera
+            doFlash();
         }
     }
 
-    public void CameraFlash()
+    public void doFlash()
     {
-        // initial color
+        //initial color
         Color col = flashImage.color;
 
-        // start time to fade over time
+        //save start time for fade effect
         startTime = Time.time;
 
-        // so we can flash again
-       // doCameraFlash = false;
-
-        // start it as alpha = 1.0 (opaque)
+        //change alpha to 1 to make screen flash the image
         col.a = 1.0f;
-
-        // flash image start color
         flashImage.color = col;
 
-        // flag we are flashing so user can't do 2 of them
+        //flag we are flashing so user can't do 2 of them
         flashing = true;
 
+        //start coroutine that makes the flash fade
         StartCoroutine(FlashCoroutine());
     }
 
@@ -76,9 +75,11 @@ public class Flash : MonoBehaviour
             flashImage.color = col;
             flashing = true;
 
+            //point at which execution will pause and be resumed the following frame
             yield return null;
         }
 
+        //allows player to now flash the camera again
         flashing = false;
 
         yield break;
