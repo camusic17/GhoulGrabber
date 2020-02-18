@@ -650,6 +650,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -663,10 +664,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 1817020d-fe9d-4e75-a30d-36605b3ccce9
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Ghost Boy Ghoul Grabber
+  organizationId: dig4715c
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
