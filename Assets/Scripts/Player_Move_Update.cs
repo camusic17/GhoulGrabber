@@ -44,6 +44,7 @@ public class Player_Move_Update : MonoBehaviour {
             Jump();
         }
 
+        /*
         //ANIMATIONS
         if (moveX != 0)
         {
@@ -61,7 +62,7 @@ public class Player_Move_Update : MonoBehaviour {
         {
             GetComponent<Animator>().SetBool("IsJumping", false);
         }
-
+        */
         
         //PHYSICS
         gameObject.GetComponent<Rigidbody>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody>().velocity.y);
