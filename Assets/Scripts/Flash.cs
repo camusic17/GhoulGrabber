@@ -12,6 +12,9 @@ public class Flash : MonoBehaviour
     private Image flashImage;
     private float startTime;
     private bool flashing = false;
+    public bool b;
+
+
 
     void Start()
     {
@@ -22,12 +25,15 @@ public class Flash : MonoBehaviour
         Color col = flashImage.color;
         col.a = 0.0f;
         flashImage.color = col;
-    }
+
+        
+}
 
     void Update()
     {
         //if primary mouse button is clicked and we are not flashing
-        if (Input.GetMouseButtonDown(0) && !flashing)
+        b = GameObject.Find("Image").GetComponent<CameraChange>().isFirst;
+        if (Input.GetMouseButtonDown(0) && !flashing && b)
         {
             //flash the camera
             doFlash();

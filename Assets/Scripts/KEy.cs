@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class KEy : MonoBehaviour
 {
+    public GameObject key; // actual key
+    public GameObject FirstKey; // UI elements
+    public GameObject SecondKey;
+    public GameObject ThirdKey;
 
-     void OnTriggerEnter(Collider collider)
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        FirstKey.SetActive(false);
+        SecondKey.SetActive(false);
+        ThirdKey.SetActive(false);
+
+    }
+
+    void OnTriggerEnter(Collider collider)
     {
         if(collider.gameObject.name == "Player")
         {
@@ -15,7 +29,8 @@ public class KEy : MonoBehaviour
             GameVariables.keyPickedUp = true;
             //-----
 
-            Destroy(gameObject);
+            Destroy(key);
+            FirstKey.SetActive(true);
         }
     }
 
